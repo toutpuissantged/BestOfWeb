@@ -1,6 +1,5 @@
-
-##BESTOFWEB
-# C'est quoi ?
+# BESTOFWEB
+## C'est quoi ?
 bestofweb est un logiciel qui vous permet de trouver rapidement 
 les meilleurs site de streaming gratuit pour les series , les films , les torrents, 
 les mangas , et autres ...
