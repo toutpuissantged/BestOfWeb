@@ -1,27 +1,27 @@
 # BESTOFWEB
-## C'est quoi ?
-bestofweb est un logiciel qui vous permet de trouver rapidement 
-les meilleurs site de streaming gratuit pour les series , les films , les torrents, 
-les mangas , et autres ...
+## What's this ?
+bestofweb is software that allows you to quickly find
+the best free streaming sites for series, movies, torrents,
+manga, and others ...
 
 ## Installation
 
-pas besoin d'installation 
-il suffit d'avoir python 3.x installer 
-et de faire 
+no installation needed
+you just need to have python 3.x install
+and to do
 
-## Utilisation
+## Use
 
-```bash
+``` bash
 gitclone https://github.com/toutpuissantged/BestOfWeb.git
 
-cd BestOfWeb/
+cd BestOfWeb /
 
 python3 Bow3.py
 ```
 
 ## Contribution
-j'invite la comunauter opensource a contribuer a cet projet 
+I invite the opensource community to contribute to this project
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT] (https://choosealicense.com/licenses/mit/)
