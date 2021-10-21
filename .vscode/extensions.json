@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "github.vscode-pull-request-github",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter-renderers"
     ]
 }
