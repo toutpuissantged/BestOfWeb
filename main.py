@@ -5,6 +5,7 @@ from random import randint as rd
 back='#41B77F'
 def site():
 	val=choix.get()
+	dir = 'config/'
 	if val=="serie":
 		cw2["text"]="serie appuiyer"
 		source_file="s.config"
@@ -17,6 +18,8 @@ def site():
 	elif val=="torrent":
 		cw2["text"]="torrent appuiyer"
 		source_file="t.config"
+
+	source_file = dir + source_file
 	try:
 		fd=open(source_file,'r')
 		liste1=fd.readlines()

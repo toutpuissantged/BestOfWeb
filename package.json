@@ -1,0 +1,23 @@
+{
+  "name": "bestofweb",
+  "version": "1.0.0",
+  "description": "web site finder",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toutpuissantged/BestOfWeb.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "toutpuissantged",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toutpuissantged/BestOfWeb/issues"
+  },
+  "homepage": "https://github.com/toutpuissantged/BestOfWeb#readme"
+}
