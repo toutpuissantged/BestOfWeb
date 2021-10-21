@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/toutpuissantged/BestOfWeb/issues"
   },
-  "homepage": "https://github.com/toutpuissantged/BestOfWeb#readme"
+  "homepage": "https://github.com/toutpuissantged/BestOfWeb#readme",
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  }
 }
