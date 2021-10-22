@@ -2,6 +2,11 @@ from tkinter import *
 import webbrowser as wb
 from random import randint as rd
 
+class Server(Tk):
+    def __init__(self):
+        Tk.__init__(self)
+        self.mainloop()
+
 back='#41B77F'
 def site():
 	val=choix.get()
