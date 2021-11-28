@@ -12,6 +12,7 @@ from view.HelpMenu import HelpMenu
 from view.baseTheme import BaseTheme
 from view.tab import TabContronller
 from view.index import Index
+from view.home import Home
 from core.jsonparser import JsonParser
 
 from controllers.search import Search

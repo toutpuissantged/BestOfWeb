@@ -1,4 +1,5 @@
-from autoloader import *
+from autoloader import  Frame , Menu , FileMenu , EditMenu , HelpMenu , BaseTheme
+from .home import Home
 
 class Index():
     ''' entry class for organize user interface '''
@@ -23,6 +24,7 @@ class Index():
         menubar.add_cascade(label='Edit', menu=Edit)
         menubar.add_cascade(label='Help', menu=Help)
 
-        BaseTheme(props=props).Main()
+        #BaseTheme(props=props).Main()
+        Home(props=props).Main()
 
         return 0

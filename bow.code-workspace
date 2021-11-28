@@ -11,7 +11,8 @@
 			"ms-toolsai.jupyter",
 			"ms-toolsai.jupyter-keymap",
 			"ms-python.vscode-pylance",
-			"ms-toolsai.jupyter-renderers"
+			"ms-toolsai.jupyter-renderers",
+			"github.copilot"
 		]
 	}
 }
