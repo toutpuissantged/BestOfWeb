@@ -10,19 +10,19 @@ class Server(Tk):
 back='#41B77F'
 def site():
 	val=choix.get()
-	dir = 'config/'
+	dir = 'config/url/'
 	if val=="serie":
 		cw2["text"]="serie appuiyer"
-		source_file="s.config"
+		source_file="s.url"
 	elif val=="film":
 		cw2["text"]="film appuiyer"
-		source_file="f.config"
+		source_file="f.url"
 	elif val=="manga":
 		cw2["text"]="manga appuiyer"
-		source_file="m.config"
+		source_file="m.url"
 	elif val=="torrent":
 		cw2["text"]="torrent appuiyer"
-		source_file="t.config"
+		source_file="t.url"
 
 	source_file = dir + source_file
 	try:
