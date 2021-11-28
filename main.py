@@ -1,11 +1,14 @@
 from autoloader import *
 
-info=JsonParser('config/info.json').parse()
-
+Info = JsonParser('config/info.json').parse()
+AppInfo = Info.AppInfo()
+Design = Info.design()
 root = Tk()
-root.geometry(info['AppScreen'])
-root.title(info['AppName'])
+root.geometry(AppInfo['AppScreen'])
+root.title(AppInfo['AppName'])
 root.resizable=False
+#couleur de fond
+root.configure(background=Design['Color']['Background'])
 
 #root.iconphoto(False, PhotoImage(file = 'assets/icon.png'))
 
@@ -17,7 +20,8 @@ props={
     'Store':NewStore,
     'Tabs':'',
     'CurrentActiveTabIndice':0,
-    'Views':{}
+    'Views':{},
+    'Info':Info
 }
 
 FileInt=FileInterface(props)

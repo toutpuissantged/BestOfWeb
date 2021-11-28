@@ -1,5 +1,6 @@
 from tkinter import Label , Button , Frame , StringVar , Entry , Radiobutton
 from tkinter.constants import TOP  , RIGHT , YES
+from typing import Any
 import webbrowser as wb
 from random import randint as rd
 
@@ -14,7 +15,7 @@ class Home():
         self.var={
             "curtextvar":StringVar()
         }
-        self.back='#41B77F'
+        self.back= props['Info'].design()['Color']['Background']
         self.hm=Frame(self.root,bg=self.back)
         self.fr=Frame(self.root,bg=self.back)
         self.fr2=Frame(self.root,bg=self.back)
@@ -22,10 +23,22 @@ class Home():
         self.choix=StringVar()
         self.choix.set("serie")
         self.rech=StringVar()
+        self.rech.set("sa")
+        self.source_file= "s.url"
 
     def Main(self):
 
         self.view()
+        return 0
+
+    def Button (self,text,command):
+        b1=Button(self.hm,text=text,width=20,font=("Courrier",9),bg="black",fg="white",command=command)
+        b1.pack(padx=2,pady=10)
+        return 0
+
+    def RadioButton(self, text : str, anchor : str ="none") -> bool : 
+        b1=Radiobutton(self.fr2,text=text,variable=self.choix,value=text,font=("Courrier",9),bg=self.back,fg='black',anchor=anchor)
+        b1.pack(anchor = anchor)
         return 0
 
     def site(self):
@@ -34,20 +47,20 @@ class Home():
         dir = 'config/url/'
         if val=="serie":
             self.cw2["text"]="serie appuiyer"
-            source_file="s.url"
+            self.source_file="s.url"
         elif val=="film":
             self.cw2["text"]="film appuiyer"
-            source_file="f.url"
+            self.source_file="f.url"
         elif val=="manga":
             self.cw2["text"]="manga appuiyer"
-            source_file="m.url"
+            self.source_file="m.url"
         elif val=="torrent":
             self.cw2["text"]="torrent appuiyer"
-            source_file="t.url"
+            self.source_file="t.url"
 
-        source_file = dir + source_file
+        self.source_file = dir + self.source_file
         try:
-            fd=open(source_file,'r')
+            fd=open(self.source_file,'r')
             liste1=fd.readlines()
             lon=len(liste1)
             print(liste1)
@@ -72,16 +85,11 @@ class Home():
         fr.pack(side=TOP)
         cw=Label(fr2,text="Categorie de site",font=("Italic",13),bg=back,fg='white')
         cw.pack()
-        b1=Radiobutton(fr2,text="serie en stream",variable=choix,value="serie",font=("Courrier",9),bg=back,fg='black')
-        b1.pack(anchor="w")
-        b1=Radiobutton(fr2,text="film en stream",variable=choix,value="film",font=("Courrier",9),bg=back,fg='black')
-        b1.pack(anchor="w")
-        b1=Radiobutton(fr2,text="manga en stream ",variable=choix,value="manga",font=("Courrier",9),bg=back,fg='black')
-        b1.pack(anchor="w")
-        b1=Radiobutton(fr2,text="site Torrent ",variable=choix,value="torrent",font=("Courrier",9),bg=back,fg='black')
-        b1.pack(anchor="w")
-        self.cw2=Label(fr2,text=choix,font=("Italic",13),bg=back,fg='white')
-        self.cw2.pack()
+        self.RadioButton("serie en stream","w")
+        self.RadioButton("film en stream","w")
+        self.RadioButton("manga en stream","w")
+        self.RadioButton("site Torrent","w")
+        
         fr2.pack(side=RIGHT)
         sh=Entry(fr3,width=30,font=("Courrier",9))
         sh.pack()

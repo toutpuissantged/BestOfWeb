@@ -1,4 +1,4 @@
-from autoloader import  Frame , Menu , FileMenu , EditMenu , HelpMenu , BaseTheme
+from autoloader import  Frame , Menu , FileMenu , EditMenu , HelpMenu
 from .home import Home
 
 class Index():
@@ -24,7 +24,6 @@ class Index():
         menubar.add_cascade(label='Edit', menu=Edit)
         menubar.add_cascade(label='Help', menu=Help)
 
-        #BaseTheme(props=props).Main()
         Home(props=props).Main()
 
         return 0

@@ -8,9 +8,9 @@ build_exe_options = {
 # a console application).
 #base = None
 #if sys.platform == "win32":
-base = "Win32GUI"
-setup( name = "Startup",
+base = "WIN32GUI"
+setup( name = "BestOfWeb",
 version = "0.1",
-description = "Simple base Template for tkinter app",
+description = "web site collection app",
 options = {"build_exe": build_exe_options},
 executables = [Executable("main.py", base=base)])
