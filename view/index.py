@@ -12,18 +12,17 @@ class Index():
 
         root=self.props['root']
         menubar = Menu(root)
-        props=self.props
         self.props['Views']['Menu']=menubar
         root.config(menu=menubar)
         
-        File=FileMenu(props=props).monted()
-        Edit=EditMenu(props=props).monted()
-        Help=HelpMenu(props).monted()
+        File=FileMenu(props=self.props).monted()
+        Edit=EditMenu(props=self.props).monted()
+        Help=HelpMenu(self.props).monted()
 
         menubar.add_cascade(label='File', menu=File)
         menubar.add_cascade(label='Edit', menu=Edit)
         menubar.add_cascade(label='Help', menu=Help)
 
-        Home(props=props).Main()
+        Home(props=self.props).Main()
 
         return 0

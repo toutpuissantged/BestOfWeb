@@ -64,14 +64,14 @@ class Home():
             command -- the command of the button
             padx -- the padx of the button (default 0)
             pady -- the pady of the button (default 0)
-            
+
         """
 
         haz=Button(self.BodyFrame,highlightbackground=self.TextColor,text=text,width=30,border=0,relief="flat",font=("Courrier",9),bg=self.ButtonColor,fg=self.ButtonTextColor,command=command)
         haz.pack(padx=padx,pady=pady)
         return 0
 
-    def openWebBrowser(self,url):
+    def openWebBrowser(self,url : str) -> bool :
         """
             open web browser
             keyword arguments:
@@ -150,5 +150,3 @@ class Home():
         self.RadioButton("Manga","w")
         self.RadioButton("Torrent","w")
         self.Button("Lancer un site au hazard" ,self.site)
-        
-        
