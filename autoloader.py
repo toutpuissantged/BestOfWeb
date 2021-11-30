@@ -10,6 +10,6 @@ from view.HelpMenu import HelpMenu
 from view.tab import TabContronller
 from view.index import Index
 from view.home import Home
-from core.jsonparser import JsonParser
+from config.info import Config
 
 from controllers.search import Search
