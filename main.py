@@ -1,8 +1,8 @@
 from autoloader import *
 
 Info = JsonParser('config/info.json').parse()
-AppInfo = Info.AppInfo()
-Design = Info.design()
+AppInfo = Info.AppInfo
+Design = Info.Design
 root = Tk()
 root.geometry(AppInfo['AppScreen'])
 root.title(AppInfo['AppName'])
