@@ -1,34 +1,41 @@
-from autoloader import *
+from autoloader import Config , Store , ArgsParse , FileInterface , Index ,Tk 
+from typing import TypedDict
+class Props(TypedDict):
+    root : Tk
+    textarea : str
+    Store : Store
+    Tabs : str
+    CurrentActiveTabIndice : int
+    Views : dict
+    Info : Config
 
-Info = JsonParser('config/info.json').parse()
-AppInfo = Info.AppInfo
-Design = Info.Design
-root = Tk()
-root.geometry(AppInfo['AppScreen'])
-root.title(AppInfo['AppName'])
-root.resizable=False
-#couleur de fond
-root.configure(background=Design['Color']['Background'])
+class App(Tk):
+    def __init__(self):
+        super().__init__()
+        self.geometry(Config.AppInfo['AppScreen'])
+        self.title(Config.AppInfo['AppName'])
+        self.resizable =False
+        #couleur de fond
+        self.configure(background=Config.Design['Color']['Background'])
+        self.NewStore= Store(1)
+        self.props : Props = {
+            'root':self,
+            'textarea':[],
+            'Store':self.NewStore,
+            'Tabs':'',
+            'CurrentActiveTabIndice':0,
+            'Views':{},
+            'Info':Config
+        }
 
-#root.iconphoto(False, PhotoImage(file = 'assets/icon.png'))
+        #FileInt=FileInterface(self.props)
 
-NewStore= Store(1)
+        ViewsEntry=Index(props=self.props)
+        ViewsEntry.main()
 
-props={
-    'root':root,
-    'textarea':[],
-    'Store':NewStore,
-    'Tabs':'',
-    'CurrentActiveTabIndice':0,
-    'Views':{},
-    'Info':Info
-}
+        #ArgsParse.parse(props=self.props)
 
-FileInt=FileInterface(props)
 
-ViewsEntry=Index(props=props)
-ViewsEntry.main()
-
-ArgsParse.parse(props=props)
-
-root.mainloop()
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()
